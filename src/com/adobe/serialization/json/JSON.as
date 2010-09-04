@@ -79,7 +79,7 @@ package com.adobe.serialization.json
 		 */
 		public static function decode( s:String, strict:Boolean = true ):*
 		{
-			return new JSONDecoder( s, strict ).getValue();
+			return new JSONDecoder( s ).getValue();
 		}
 	
 	}
