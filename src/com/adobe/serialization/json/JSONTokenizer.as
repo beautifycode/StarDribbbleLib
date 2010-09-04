@@ -510,7 +510,7 @@ package com.adobe.serialization.json
 			// check for scientific notation
 			if( ch == 'e' || ch == 'E' )
 			{
-				input += "e"
+				input += "e";
 				nextChar();
 				
 				// check for sign

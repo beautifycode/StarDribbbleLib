@@ -69,7 +69,7 @@ package com.adobe.serialization.json
 		public function JSONDecoder( s:String, strict:Boolean )
 		{
 			this.strict = strict;
-			tokenizer = new JSONTokenizer( s, strict );
+			tokenizer = new JSONTokenizer( s );
 			
 			nextToken();
 			value = parseValue();

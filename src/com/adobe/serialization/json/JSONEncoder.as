@@ -226,7 +226,7 @@ package com.adobe.serialization.json
 				if( s.length > 0 )
 				{
 					// we've already added an element, so add the comma separator
-					s += ","
+					s += ",";
 				}
 				
 				// convert the value to a string
@@ -293,7 +293,7 @@ package com.adobe.serialization.json
 					if( s.length > 0 )
 					{
 						// we've already added an item, so add the comma separator
-						s += ","
+						s += ",";
 					}
 					
 					s += escapeString( key ) + ":" + convertToString( value );
@@ -305,7 +305,8 @@ package com.adobe.serialization.json
 				// serialize them along with their values.
 				for each( var v:XML in classInfo..*.( name() == "variable" || ( name() == "accessor"
 					// Issue #116 - Make sure accessors are readable
-					&& attribute( "access" ).charAt( 0 ) == "r" ) ) )
+					// && attribute( "access" ).charAt( 0 ) == "r" 
+					) ) )
 				{
 					// Issue #110 - If [Transient] metadata exists, then we should skip
 					if( v.metadata && v.metadata.( @name == "Transient" ).length() > 0 )
@@ -318,7 +319,7 @@ package com.adobe.serialization.json
 					if( s.length > 0 )
 					{
 						// We've already added an item, so add the comma separator
-						s += ","
+						s += ",";
 					}
 					
 					s += escapeString( v.@name.toString() ) + ":" + convertToString( o[ v.@name ] );
